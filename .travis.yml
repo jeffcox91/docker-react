@@ -10,7 +10,7 @@ before_install:
 script:
   - docker run -e CI=true jcox/docker-react npm run test
  
- deploy:
+deploy:
   provider: elasticbeanstalk
   region: "us-east-2"
   app: "frontend"
@@ -20,6 +20,6 @@ script:
   on:
     branch: master
   access_key_id: $AWS_ACCESS_KEY
-  secret_access_key: "RROGHBINnXxAUIRxYJyIbfsb0IE7oUDB/MxCSLRg"
+  secret_access_key: "$AWS_SECRET_KEY"
 
   
